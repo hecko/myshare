@@ -177,6 +177,7 @@ public class Sharelocation extends MapActivity {
             }
         });
         
+	// sending information code starts here
         sendButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 Context context = getApplicationContext();
@@ -188,6 +189,7 @@ public class Sharelocation extends MapActivity {
                 }
                 
                 Intent i = new Intent(android.content.Intent.ACTION_SEND);
+		// get location information here
                 CharSequence location = lastLocation.getLatitudeE6() / 1E6 + "," + lastLocation.getLongitudeE6() / 1E6;
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_SUBJECT, settings.getString("message_subject", getString(R.string.share_location_subject)));

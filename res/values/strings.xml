@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">GPS Share</string><string name="acquiring_signal">Acquiring location</string>
-    
-    <string name="send_button">Send Location</string><string name="location_lost">Your location is momentarily unavailable.</string><string name="share_location_subject">My current location</string>
-	
-	<string name="share_location_body">Here is a link to my current location: </string>
-	
-	<string name="share_title">Share Location</string>
-	<string name="no_way_to_share">No apps available to share location with</string>
-	<string name="menu_about">About</string>
+    <string name="app_name">MyShare</string>
+    <string name="acquiring_signal">Acquiring location</string>
+    <string name="send_button">Send Location</string>
+    <string name="location_lost">Your location is momentarily unavailable.</string>
+    <string name="share_location_subject">My current location</string>
+    <string name="share_location_body">Here is a link to my current location: </string>
+    <string name="share_title">Share Location</string>
+    <string name="no_way_to_share">No apps available to share location with</string>
+    <string name="menu_about">About</string>
     <string name="menu_map_mode">Map Mode</string>
     <string name="menu_satellite_mode">Satellite Mode</string>
-    <string name="menu_preferences">Settings</string><string name="about_title">About GPS Share</string>
+    <string name="menu_preferences">Settings</string>
+    <string name="about_title">About</string>
     <string name="close_button">Close</string>
-    <string name="about">Version 1.4.1&lt;br/&gt;
+    <string name="about">
         &lt;a href=&quot;http://kenkinder.com/gps-share/&quot;&gt;kenkinder.com/gps-share/&lt;/a&gt;&lt;br/&gt;
         &lt;br/&gt;
-        Use GPS Share to share your location how you want, whether it\'s SMS,
-        Email, Twitter, or something else. Because GPS Share uses no external
-        services besides Google Maps, your privacy isn\'t a concern. GPS
-        Share is an Open Source application and has no advertising. Internet
+        Use to share your location how you want, whether it\'s SMS,
+        Email, Twitter, or something else. Because this app uses no external
+        services besides Google Maps, your privacy isn\'t a concern. 
+        This app is an Open Source application and has no advertising. Internet
         access is used only to download Google Maps tiles.&lt;br/&gt;
         &lt;br/&gt;
         Copyright © 2011 Ken Kinder&lt;br/&gt;
+	Modified by Marcel Hecko, 2012&lt;br/&gt;
         &lt;br/&gt;
         Permission is hereby granted, free of charge, to any person obtaining a copy
         of this software and associated documentation files (the &quot;Software&quot;), to deal
@@ -42,7 +44,7 @@
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
         THE SOFTWARE.
     </string>
-    <string name="preferences_activity">GPS Share Settings</string>
+    <string name="preferences_activity">Settings</string>
     <string name="message_subject_preference">Default Subject</string>
     <string name="message_subject_preference_summary">Subject for things like email</string>
     <string name="message_body_preference">Default Message Body</string>

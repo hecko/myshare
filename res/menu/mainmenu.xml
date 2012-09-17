@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:id="@+id/about" android:title="@string/menu_about" android:icon="@android:drawable/ic_menu_help"></item>
-<item android:id="@+id/recenter" android:title="@string/menu_recenter" android:icon="@android:drawable/ic_menu_compass"></item>
-<item android:id="@+id/preferences" android:title="@string/menu_preferences" android:icon="@android:drawable/ic_menu_preferences"></item><item android:id="@+id/map_mode" android:title="@string/menu_map_mode" android:icon="@android:drawable/ic_menu_mapmode"></item>
-<item android:id="@+id/satellite_mode" android:title="@string/menu_satellite_mode" android:icon="@android:drawable/ic_menu_mapmode"></item>
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/about" android:title="@string/menu_about" android:icon="@android:drawable/ic_menu_help"></item>
+  <item android:id="@+id/recenter" android:title="@string/menu_recenter" android:icon="@android:drawable/ic_menu_compass"></item>
+  <item android:id="@+id/preferences" android:title="@string/menu_preferences" android:icon="@android:drawable/ic_menu_preferences"></item>
+  <item android:id="@+id/map_mode" android:title="@string/menu_map_mode" android:icon="@android:drawable/ic_menu_mapmode"></item>
+  <item android:id="@+id/satellite_mode" android:title="@string/menu_satellite_mode" android:icon="@android:drawable/ic_menu_mapmode"></item>
 </menu>
