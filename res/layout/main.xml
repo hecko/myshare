@@ -19,7 +19,7 @@
                   android:layout_gravity="center_vertical"
                   android:paddingLeft="5dp"/>
     </LinearLayout>
-    <!-- Debug: 0SKImB9RzGo3Wo08Xe-F6nHvWwk_9bqzSVFHJNg -->
+    <!-- Debug: 0uPMrDR1NeFAoCbelIV7w7yEQsWbEcaLeAZdRqA -->
     <!-- Real: 0SKImB9RzGo3BQUdxJRt-S380AF_Yhabkqw6PWw -->
     <com.google.android.maps.MapView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -27,7 +27,7 @@
         android:clickable="true"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:apiKey="0SKImB9RzGo3BQUdxJRt-S380AF_Yhabkqw6PWw"
+        android:apiKey="0uPMrDR1NeFAoCbelIV7w7yEQsWbEcaLeAZdRqA"
         android:layout_weight="1"/>
     <Button
         android:text="@string/send_button"
