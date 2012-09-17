@@ -35,4 +35,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp" android:visibility="gone"/>
+    <TextView
+        android:text="@string/send_button"
+        android:id="@+id/TestBar01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp" android:visibility="gone"/>
 </LinearLayout>

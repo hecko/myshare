@@ -7,4 +7,7 @@
 /home/marcel/code/myshare/res/drawable-hdpi/icon.png \
 /home/marcel/code/myshare/res/drawable-ldpi/icon.png \
 /home/marcel/code/myshare/res/drawable-mdpi/icon.png \
+/home/marcel/code/myshare/bin/res/drawable-hdpi/icon.png \
+/home/marcel/code/myshare/bin/res/drawable-ldpi/icon.png \
+/home/marcel/code/myshare/bin/res/drawable-mdpi/icon.png \
 /home/marcel/code/myshare/bin/AndroidManifest.xml \

@@ -21,13 +21,14 @@ public final class R {
         public static final int ProgressBar01=0x7f070005;
         public static final int ScrollView01=0x7f070001;
         public static final int SendButton=0x7f070008;
-        public static final int about=0x7f070009;
+        public static final int TestBar01=0x7f070009;
+        public static final int about=0x7f07000a;
         public static final int acquiring_signal_label=0x7f070006;
         public static final int acquiring_signal_layout=0x7f070004;
-        public static final int map_mode=0x7f07000c;
-        public static final int preferences=0x7f07000b;
-        public static final int recenter=0x7f07000a;
-        public static final int satellite_mode=0x7f07000d;
+        public static final int map_mode=0x7f07000d;
+        public static final int preferences=0x7f07000c;
+        public static final int recenter=0x7f07000b;
+        public static final int satellite_mode=0x7f07000e;
     }
     public static final class layout {
         public static final int about=0x7f030000;
