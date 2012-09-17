@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.text.format.Time;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,6 +19,17 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.cookie.Cookie;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -211,6 +223,8 @@ public class Sharelocation extends MapActivity {
                 		+ " http://maps.google.com/maps?q=loc:"
                         	+ location + " at " + now.toString());
 
+		Log.v("MyShare:","Posielam udaje pre " + location);
+
                 try {
                     startActivity(Intent.createChooser(i, getString(R.string.share_title)));
                 } catch (android.content.ActivityNotFoundException ex) {
@@ -222,6 +236,7 @@ public class Sharelocation extends MapActivity {
 	//sending information to VIP person
 	vipButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
+		Log.e("MyShare:","Bol stlaceny VIP button.");
                 Context context = getApplicationContext();
 
                 SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
@@ -240,18 +255,13 @@ public class Sharelocation extends MapActivity {
                                 + location); 
 
 		try {
-			url = new URL("http://www.moirelabs.com/myshare/");
-		} catch(MalformedURLException nameOfTheException) {
-			// do nothin
-		}
-		try {
-			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-			InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-		} catch(IOException nameOfTheException) {
-			//do nothing
-		}
-		finally {
-     			//urlConnection.disconnect();
+			Log.e("MyShare:","Volam HTTP GET kod...");
+			URL url = new URL("http://www.moirelabs.com/myshare/?pos=" + location);
+			url.getContent();
+		} catch(java.net.MalformedURLException e) {
+			Log.e("MyShare:MalformedURL","Chyba:" + e);
+		} catch(java.io.IOException e) { 
+			Log.e("MyShare:IO Exception","Chyba:" + e);
 		}
 	   }
         });
