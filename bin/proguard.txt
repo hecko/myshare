@@ -1,9 +1,9 @@
 # view res/layout/main.xml #generated:24
 -keep class com.google.android.maps.MapView { <init>(...); }
 
-# view AndroidManifest.xml #generated:12
+# view AndroidManifest.xml #generated:15
 -keep class com.kkinder.sharelocation.Preferences { <init>(...); }
 
-# view AndroidManifest.xml #generated:5
+# view AndroidManifest.xml #generated:7
 -keep class com.kkinder.sharelocation.Sharelocation { <init>(...); }
 

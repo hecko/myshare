@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.text.format.Time;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,6 +18,13 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.io.InputStream;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.net.MalformedURLException;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
@@ -35,6 +43,7 @@ public class Sharelocation extends MapActivity {
     private GeoPoint          lastLocation;
     private Dialog            dialog;
     private Boolean           satelliteMode;
+    private URL			url;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -191,6 +200,8 @@ public class Sharelocation extends MapActivity {
                     lastLocation = locationOverlay.getMyLocation(); 
                 }
                 
+		Time now = new Time();
+		now.setToNow();
                 Intent i = new Intent(android.content.Intent.ACTION_SEND);
 		// get location information here
                 CharSequence location = lastLocation.getLatitudeE6() / 1E6 + "," + lastLocation.getLongitudeE6() / 1E6;
@@ -198,7 +209,7 @@ public class Sharelocation extends MapActivity {
                 i.putExtra(Intent.EXTRA_SUBJECT, settings.getString("message_subject", getString(R.string.share_location_subject)));
                 i.putExtra(Intent.EXTRA_TEXT, settings.getString("message_body", getString(R.string.share_location_body)) 
                 		+ " http://maps.google.com/maps?q=loc:"
-                        + location);
+                        	+ location + " at " + now.toString());
 
                 try {
                     startActivity(Intent.createChooser(i, getString(R.string.share_title)));
@@ -206,6 +217,43 @@ public class Sharelocation extends MapActivity {
                     Toast.makeText(context, getString(R.string.no_way_to_share), Toast.LENGTH_LONG).show();
                 }
             }
+        });
+	
+	//sending information to VIP person
+	vipButton.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                Context context = getApplicationContext();
+
+                SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+
+                if (locationOverlay.getMyLocation() != null) {
+                    lastLocation = locationOverlay.getMyLocation();
+                }
+
+                Intent i = new Intent(android.content.Intent.ACTION_SEND);
+                // get location information here
+                CharSequence location = lastLocation.getLatitudeE6() / 1E6 + "," + lastLocation.getLongitudeE6() / 1E6;
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_SUBJECT, settings.getString("message_subject", getString(R.string.share_location_subject)));
+                i.putExtra(Intent.EXTRA_TEXT, settings.getString("message_body", getString(R.string.share_location_body))
+                                + " http://maps.google.com/maps?q=loc:"
+                                + location); 
+
+		try {
+			url = new URL("http://www.moirelabs.com/myshare/");
+		} catch(MalformedURLException nameOfTheException) {
+			// do nothin
+		}
+		try {
+			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+			InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+		} catch(IOException nameOfTheException) {
+			//do nothing
+		}
+		finally {
+     			//urlConnection.disconnect();
+		}
+	   }
         });
     }
 

@@ -8,6 +8,7 @@
 /home/marcel/code/myshare/bin/classes/com/kkinder/sharelocation/R$drawable.class \
 /home/marcel/code/myshare/bin/classes/com/kkinder/sharelocation/BuildConfig.class \
 /home/marcel/code/myshare/bin/classes/com/kkinder/sharelocation/R$id.class \
+/home/marcel/code/myshare/bin/classes/com/kkinder/sharelocation/Sharelocation$4.class \
 /home/marcel/code/myshare/bin/classes/com/kkinder/sharelocation/Sharelocation$3.class \
 /home/marcel/code/myshare/bin/classes/com/kkinder/sharelocation/R$layout.class \
 /home/marcel/code/myshare/bin/classes/com/kkinder/sharelocation/R$string.class \

@@ -20,5 +20,5 @@ jarsigner -verify my_signed.apk
 
 zipalign -v 4 your_project_name-unaligned.apk your_project_name.apk
 
-adb install bin/MyFirstApp-debug.apk
+~/android-sdk-linux/platform-tools/adb install -r bin/Sharelocation-debug.apk
 On your device, locate MyFirstActivity and open it.

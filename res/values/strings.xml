@@ -3,6 +3,7 @@
     <string name="app_name">MyShare</string>
     <string name="acquiring_signal">Acquiring location</string>
     <string name="send_button">Send Location</string>
+    <string name="vip_button">Send to VIP</string>
     <string name="location_lost">Your location is momentarily unavailable.</string>
     <string name="share_location_subject">My current location</string>
     <string name="share_location_body">Here is a link to my current location: </string>
