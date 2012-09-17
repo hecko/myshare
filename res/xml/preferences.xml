@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <EditTextPreference
+                android:key="message_subject"
+                android:title="@string/message_subject_preference"
+                android:summary="@string/message_subject_preference_summary"
+                android:dialogTitle="@string/message_subject_preference" android:defaultValue="@string/share_location_subject"/>
+        <EditTextPreference
+                android:key="message_body"
+                android:title="@string/message_body_preference"
+                android:summary="@string/message_body_preference_summary"
+                android:dialogTitle="@string/message_body_preference" android:defaultValue="@string/share_location_body"/>                
+</PreferenceScreen>
