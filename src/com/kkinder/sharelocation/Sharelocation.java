@@ -31,6 +31,7 @@ public class Sharelocation extends MapActivity {
     private MyLocationOverlay locationOverlay;
     private LinearLayout      acquiringLayout;
     private Button            sendButton;
+    private Button            vipButton;
     private GeoPoint          lastLocation;
     private Dialog            dialog;
     private Boolean           satelliteMode;
@@ -142,6 +143,7 @@ public class Sharelocation extends MapActivity {
         // Get all our components
         acquiringLayout = (LinearLayout) findViewById(R.id.acquiring_signal_layout);
         sendButton = (Button) findViewById(R.id.SendButton);
+	vipButton = (Button) findViewById(R.id.VipButton);
         mapView = (MapView) findViewById(R.id.MapView);
 
         // Set up mapping
@@ -170,6 +172,7 @@ public class Sharelocation extends MapActivity {
                                 mapController.setZoom(19);
                                 acquiringLayout.setVisibility(View.GONE);
                                 sendButton.setVisibility(View.VISIBLE);
+				vipButton.setVisibility(View.VISIBLE);
                             }
                         }
                     });

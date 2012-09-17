@@ -21,7 +21,7 @@ public final class R {
         public static final int ProgressBar01=0x7f070005;
         public static final int ScrollView01=0x7f070001;
         public static final int SendButton=0x7f070008;
-        public static final int TestBar01=0x7f070009;
+        public static final int Vipbutton=0x7f070009;
         public static final int about=0x7f07000a;
         public static final int acquiring_signal_label=0x7f070006;
         public static final int acquiring_signal_layout=0x7f070004;
