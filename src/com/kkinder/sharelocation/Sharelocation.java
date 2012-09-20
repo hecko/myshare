@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.location.Location;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Html;
@@ -161,7 +162,7 @@ public class Sharelocation extends MapActivity {
         SharedPreferences settings = getPreferences(MODE_WORLD_WRITEABLE);
         satelliteMode = settings.getBoolean("satelliteMode", true);
 
-        // Get all our components
+        // Get all our UI components
         acquiringLayout = (LinearLayout) findViewById(R.id.acquiring_signal_layout);
         sendButton = (Button) findViewById(R.id.SendButton);
 	vipButton = (Button) findViewById(R.id.VipButton);
@@ -169,7 +170,7 @@ public class Sharelocation extends MapActivity {
 
         // Set up mapping
         mapController = mapView.getController();
-        mapView.setBuiltInZoomControls(true);
+        mapView.setBuiltInZoomControls(false);
         if (satelliteMode) {
             mapView.setSatellite(true);
         } else {
@@ -180,6 +181,7 @@ public class Sharelocation extends MapActivity {
         locationOverlay.enableCompass();
         mapView.getOverlays().add(locationOverlay);
 
+	// https://developers.google.com/maps/documentation/android/reference/com/google/android/maps/MyLocationOverlay
         // Trigger for acquiring location -- also appears to trigger of
         // location is significantly updated as accuracy increases.
         locationOverlay.runOnFirstFix(new Runnable() {
@@ -215,7 +217,6 @@ public class Sharelocation extends MapActivity {
 		Time now = new Time();
 		now.setToNow();
                 Intent i = new Intent(android.content.Intent.ACTION_SEND);
-		// get location information here
                 CharSequence location = lastLocation.getLatitudeE6() / 1E6 + "," + lastLocation.getLongitudeE6() / 1E6;
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_SUBJECT, settings.getString("message_subject", getString(R.string.share_location_subject)));
@@ -225,6 +226,7 @@ public class Sharelocation extends MapActivity {
 
 		Log.v("MyShare:","Posielam udaje pre " + location);
 
+		//send data via choosen service
                 try {
                     startActivity(Intent.createChooser(i, getString(R.string.share_title)));
                 } catch (android.content.ActivityNotFoundException ex) {
@@ -236,7 +238,8 @@ public class Sharelocation extends MapActivity {
 	//sending information to VIP person
 	vipButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-		Log.e("MyShare:","Bol stlaceny VIP button.");
+		Log.d("MyShare:","Bol stlaceny VIP button.");
+
                 Context context = getApplicationContext();
 
                 SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
@@ -246,7 +249,6 @@ public class Sharelocation extends MapActivity {
                 }
 
                 Intent i = new Intent(android.content.Intent.ACTION_SEND);
-                // get location information here
                 CharSequence location = lastLocation.getLatitudeE6() / 1E6 + "," + lastLocation.getLongitudeE6() / 1E6;
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_SUBJECT, settings.getString("message_subject", getString(R.string.share_location_subject)));
@@ -254,14 +256,18 @@ public class Sharelocation extends MapActivity {
                                 + " http://maps.google.com/maps?q=loc:"
                                 + location); 
 
+		//send data to remote server
 		try {
 			Log.e("MyShare:","Volam HTTP GET kod...");
 			URL url = new URL("http://www.moirelabs.com/myshare/?pos=" + location);
 			url.getContent();
+			Toast.makeText(context, "Data has been sent (" + location + ")", Toast.LENGTH_LONG).show();
 		} catch(java.net.MalformedURLException e) {
 			Log.e("MyShare:MalformedURL","Chyba:" + e);
+			Toast.makeText(context, "Data was NOT SENT - Error.", Toast.LENGTH_LONG).show();
 		} catch(java.io.IOException e) { 
 			Log.e("MyShare:IO Exception","Chyba:" + e);
+			Toast.makeText(context, "Data was NOT SENT - Error.", Toast.LENGTH_LONG).show();
 		}
 	   }
         });

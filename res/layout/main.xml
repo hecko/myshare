@@ -33,14 +33,14 @@
         android:text="@string/send_button"
         android:id="@+id/SendButton"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp" 
+        android:layout_height="70dp"
+        android:layout_marginTop="0dp" 
 	android:visibility="gone"/>
     <Button
         android:text="@string/vip_button"
         android:id="@+id/VipButton"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="0dp"
 	android:visibility="gone"/>
 </LinearLayout>
