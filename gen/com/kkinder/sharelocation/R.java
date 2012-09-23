@@ -17,22 +17,18 @@ public final class R {
         public static final int AboutLayout=0x7f070000;
         public static final int AboutTextView=0x7f070002;
         public static final int CloseButton=0x7f070003;
-        public static final int MapView=0x7f070007;
-        public static final int ProgressBar01=0x7f070005;
+        public static final int GpsInfoText=0x7f070004;
         public static final int ScrollView01=0x7f070001;
-        public static final int SendButton=0x7f070008;
-        public static final int VipButton=0x7f070009;
-        public static final int about=0x7f07000a;
-        public static final int acquiring_signal_label=0x7f070006;
-        public static final int acquiring_signal_layout=0x7f070004;
-        public static final int map_mode=0x7f07000d;
-        public static final int preferences=0x7f07000c;
-        public static final int recenter=0x7f07000b;
-        public static final int satellite_mode=0x7f07000e;
+        public static final int about=0x7f070006;
+        public static final int map_mode=0x7f070009;
+        public static final int preferences=0x7f070008;
+        public static final int recenter=0x7f070007;
+        public static final int satellite_mode=0x7f07000a;
+        public static final int vipButton=0x7f070005;
     }
     public static final class layout {
         public static final int about=0x7f030000;
-        public static final int main=0x7f030001;
+        public static final int gpsinfo=0x7f030001;
     }
     public static final class menu {
         public static final int mainmenu=0x7f060000;
