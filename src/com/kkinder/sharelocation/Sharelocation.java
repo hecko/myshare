@@ -56,7 +56,6 @@ public class Sharelocation extends MapActivity {
     private GeoPoint          lastLocation;
     private Dialog            dialog;
     private Boolean           satelliteMode;
-    private URL			url;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
